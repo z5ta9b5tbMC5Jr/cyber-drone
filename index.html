@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber-Drone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <canvas id="gameCanvas"></canvas>
+        
+        <!-- HUD -->
+        <div id="hud-container">
+            <div id="score" class="hud-item">SCORE: 0</div>
+            <div id="data-bits" class="hud-item">DATA-BITS: 0</div>
+            <div id="powerup-status" class="hud-item"></div>
+        </div>
+
+        <!-- Start Screen / Main Menu -->
+        <div id="main-menu" class="screen">
+            <h1>CYBER-DRONE</h1>
+            <button id="start-game-btn">Start Game</button>
+            <button id="shop-btn">Shop</button>
+            <button id="missions-btn">Missions</button>
+            <div id="highscore-display">HIGHSCORE: 0</div>
+        </div>
+
+        <!-- Difficulty Selection Screen -->
+        <div id="difficulty-screen" class="screen" style="display: none;">
+            <h2>Select Difficulty</h2>
+            <div id="difficulty-selector">
+                <button data-difficulty="easy">Easy</button>
+                <button data-difficulty="normal">Normal</button>
+                <button data-difficulty="hard">Hard</button>
+            </div>
+            <button class="back-btn" data-target="mainMenu">Back</button>
+        </div>
+
+        <!-- Shop Screen -->
+        <div id="shop-screen" class="screen" style="display: none;">
+            <h2>SKIN SHOP</h2>
+            <div id="shop-items"></div>
+            <div id="player-data-bits">Your Data-Bits: 0</div>
+            <button class="back-btn" data-target="mainMenu">Back</button>
+        </div>
+
+        <!-- Missions Screen -->
+        <div id="missions-screen" class="screen" style="display: none;">
+            <h2>MISSIONS</h2>
+            <ul id="missions-list"></ul>
+            <button class="back-btn" data-target="mainMenu">Back</button>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

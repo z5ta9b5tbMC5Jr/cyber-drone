@@ -1,0 +1,166 @@
+/* --- General Setup --- */
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+    background-color: #000;
+    font-family: 'Courier New', Courier, monospace;
+    color: #0ff;
+    user-select: none;
+}
+
+.game-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+canvas {
+    display: block;
+    background: #02021a;
+    box-shadow: 0 0 40px #f0f, 0 0 20px #0ff inset;
+    transition: transform 0.1s;
+}
+
+/* --- Screens (Menus) --- */
+.screen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: rgba(0, 0, 10, 0.8);
+    padding: 40px;
+    border: 2px solid #f0f;
+    box-shadow: 0 0 20px #f0f;
+    width: 80%;
+    max-width: 500px;
+}
+
+.screen h1, .screen h2 {
+    margin-top: 0;
+    color: #f0f;
+    text-shadow: 0 0 10px #f0f, 0 0 20px #0ff;
+}
+
+.screen button {
+    background: transparent;
+    border: 2px solid #0ff;
+    color: #0ff;
+    font-size: 1.2em;
+    padding: 15px 30px;
+    margin: 10px;
+    cursor: pointer;
+    transition: background 0.3s, box-shadow 0.3s;
+    text-shadow: 0 0 5px #0ff;
+    display: block;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.screen button:hover {
+    background: rgba(0, 255, 255, 0.2);
+    box-shadow: 0 0 15px #0ff;
+}
+
+.screen .back-btn {
+    border-color: #f0f;
+    color: #f0f;
+    margin-top: 20px;
+}
+
+.screen .back-btn:hover {
+    background: rgba(255, 0, 255, 0.2);
+    box-shadow: 0 0 15px #f0f;
+}
+
+/* --- HUD --- */
+#hud-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+}
+
+.hud-item {
+    font-size: 1.5em;
+    text-shadow: 0 0 8px #0ff, 0 0 15px #f0f;
+}
+
+#powerup-status {
+    color: #f0f;
+}
+
+#highscore-display {
+    margin-top: 30px;
+    font-size: 1.2em;
+    color: #f0f;
+}
+
+/* --- Shop --- */
+#shop-items {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.shop-item {
+    border: 2px solid #0ff;
+    padding: 10px;
+    text-align: center;
+}
+
+.shop-item .skin-preview {
+    width: 80px;
+    height: 80px;
+    background: #02021a;
+    margin: 0 auto 10px;
+    border: 1px solid #f0f;
+}
+
+.shop-item button {
+    width: 100%;
+    padding: 8px;
+    font-size: 1em;
+}
+
+.shop-item button.equipped {
+    background: #0ff;
+    color: #000;
+    cursor: default;
+}
+
+/* --- Missions --- */
+#missions-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+#missions-list li {
+    background: rgba(0, 255, 255, 0.1);
+    margin-bottom: 10px;
+    padding: 10px;
+    border-left: 3px solid #0ff;
+}
+
+#missions-list li.completed {
+    border-left-color: #f0f;
+    text-decoration: line-through;
+    opacity: 0.7;
+}
